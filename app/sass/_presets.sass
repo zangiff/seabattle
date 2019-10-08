@@ -1,0 +1,93 @@
+*
+  box-sizing: border-box
+
+html, body
+  font-family: 'Open Sans', Arial, Tahoma, sans-serif
+  font-weight: 400
+  font-size: 16px
+  color: #333
+
+body
+  overflow-x: hidden
+  background-image: url("../img/gravel.png")
+
+body, ul, ol
+  margin: 0
+  padding: 0
+
+ul, ol
+  list-style: none
+
+input, textarea
+  outline: none
+  &:active
+    outline: none
+  &:focus
+    outline: none
+
+a
+  transition: all .2s ease-in-out
+  &:link
+    color: #333
+    text-decoration: none
+  &:active
+    color: #f33
+  &:visited
+    color: darken(#333, 50%)
+
+img
+  max-width: 100%
+  height: auto
+  display: inline-block
+
+.container
+  max-width: 1200px
+  padding: 0 30px
+  margin: 0 auto
+
+.hidden
+  display: none
+
+.invisible
+  opacity: 0
+
+.clearfix::after
+  content: ""
+  display: table
+  clear: both
+
+.button
+  font-weight: 400
+  font-size: 16px
+  text-transform: uppercase
+  border: none
+  outline: none
+  cursor: pointer
+  transition: all .3s ease-in-out
+  &:active, &:focus
+    border: none
+    outline: none
+  &:hover
+    background: #0ff
+
+//====================Gradients for shooting and battle process=================
+
+.red
+  background: #db0404 !important
+  background: linear-gradient(45deg,  #db0404 2%,#fc6819 47%,#ad1103 68%,#ff1905 100%) !important
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db0404', endColorstr='#ff1905',GradientType=1) !important
+
+.green
+  background: #073a01 !important
+  background: linear-gradient(45deg,  #073a01 2%,#13c413 47%,#073a01 68%,#073a01 100%) !important
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#073a01', endColorstr='#073a01',GradientType=1) !important
+
+.yellow
+  background: #f7db04 !important
+  background: linear-gradient(45deg,  #f7db04 2%,#d3ca15 47%,#dbfc05 68%,#e5f904 100%) !important
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7db04', endColorstr='#e5f904',GradientType=1) !important
+
+.black
+  background: #00121c !important
+  background: linear-gradient(45deg,  #00121c 0%,#000000 47%,#23000a 68%,#050000 100%) !important
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00121c', endColorstr='#050000',GradientType=1) !important

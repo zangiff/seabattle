@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sea Battle 1.0.0</title>
+  <!-- <link rel="stylesheet" href="./css/light.min.css"> -->
+</head>
+<body>
+	<div id="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrap">
+          <div class="header__title">
+            <div class="header__title__controls">
+              <div class="header__title__controls-light" id="light-switch">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" class="svg-inline--fa fa-sun fa-w-16 header__title__controls-light__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="white" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg>
+              </div>
+              <div class="header__title__controls-dark" id="dark-switch">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon" class="svg-inline--fa fa-moon fa-w-16 header__title__controls-dark__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="black" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+              </div>
+            </div>
+            <h1>Sea Battle</h1>
+            <span>version: 1.0.0</span>
+            <blockquote>
+              <p><q>There must be a beginning of any great matter, but the continuing unto the end until it be thoroughly finished yields the true glory</q></p>
+              <span>Sir Francis Drake</span>
+            </blockquote>
+          </div>
+          <div class="header__controls">
+            <button class="button header__button header__button-show" type="button" id="header-button-show">Show all ships</button>
+            <button class="button header__button header__button-ask" type="button" id="header-button-ask">Ask a hint</button>
+            <button class="button header__button header__button-restart" type="button" id="header-button-restart">Restart the game</button>
+          </div>
+				</div>
+			</div>
+		</header>
+    <main id="main">
+      <section class="board">
+        <div class="container">
+          <div class="board__wrap">
+            <div class="board__battle">
+              <table class="board__field">
+            		<thead class="board__field__header">
+            			<tr class="board__field__header__row">
+                    <th class="board__field__handler"></th>
+            				<th class="board__field__handler">01</th><th class="board__field__handler">02</th><th class="board__field__handler">03</th><th class="board__field__handler">04</th><th class="board__field__handler">05</th><th class="board__field__handler">06</th>
+            				<th class="board__field__handler">07</th><th class="board__field__handler">08</th><th class="board__field__handler">09</th><th class="board__field__handler">10</th><th class="board__field__handler">11</th><th class="board__field__handler">12</th>
+            				<th class="board__field__handler">13</th><th class="board__field__handler">14</th><th class="board__field__handler">15</th><th class="board__field__handler">16</th><th class="board__field__handler">17</th><th class="board__field__handler">18</th>
+            				<th class="board__field__handler">19</th><th class="board__field__handler">20</th>
+            			</tr>
+            		</thead>
+                <!-- <tfoot class="board__field__footer">
+                  <tr class="board__field__footer__row">
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                    <td class="board__field__footer__cell"></td>
+                  </tr>
+                </tfoot> -->
+            		<tbody class="board__field__body">
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="A">A</td>
+              			<td class="board__field__body__cell" id="1"></td><td class="board__field__body__cell" id="2"></td><td class="board__field__body__cell" id="3"></td><td class="board__field__body__cell" id="4"></td>
+              			<td class="board__field__body__cell" id="5"></td><td class="board__field__body__cell" id="6"></td><td class="board__field__body__cell" id="7"></td><td class="board__field__body__cell" id="8"></td>
+              			<td class="board__field__body__cell" id="9"></td><td class="board__field__body__cell" id="10"></td><td class="board__field__body__cell" id="11"></td><td class="board__field__body__cell" id="12"></td>
+              			<td class="board__field__body__cell" id="13"></td><td class="board__field__body__cell" id="14"></td><td class="board__field__body__cell" id="15"></td><td class="board__field__body__cell" id="16"></td>
+              			<td class="board__field__body__cell" id="17"></td><td class="board__field__body__cell" id="18"></td><td class="board__field__body__cell" id="19"></td><td class="board__field__body__cell" id="20"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="B">B</td>
+              			<td class="board__field__body__cell" id="21"></td><td class="board__field__body__cell" id="22"></td><td class="board__field__body__cell" id="23"></td><td class="board__field__body__cell" id="24"></td>
+              			<td class="board__field__body__cell" id="25"></td><td class="board__field__body__cell" id="26"></td><td class="board__field__body__cell" id="27"></td><td class="board__field__body__cell" id="28"></td>
+              			<td class="board__field__body__cell" id="29"></td><td class="board__field__body__cell" id="30"></td><td class="board__field__body__cell" id="31"></td><td class="board__field__body__cell" id="32"></td>
+              			<td class="board__field__body__cell" id="33"></td><td class="board__field__body__cell" id="34"></td><td class="board__field__body__cell" id="35"></td><td class="board__field__body__cell" id="36"></td>
+              			<td class="board__field__body__cell" id="37"></td><td class="board__field__body__cell" id="38"></td><td class="board__field__body__cell" id="39"></td><td class="board__field__body__cell" id="40"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="C">C</td>
+              			<td class="board__field__body__cell" id="41"></td><td class="board__field__body__cell" id="42"></td><td class="board__field__body__cell" id="43"></td><td class="board__field__body__cell" id="44"></td>
+              			<td class="board__field__body__cell" id="45"></td><td class="board__field__body__cell" id="46"></td><td class="board__field__body__cell" id="47"></td><td class="board__field__body__cell" id="48"></td>
+              			<td class="board__field__body__cell" id="49"></td><td class="board__field__body__cell" id="50"></td><td class="board__field__body__cell" id="51"></td><td class="board__field__body__cell" id="52"></td>
+              			<td class="board__field__body__cell" id="53"></td><td class="board__field__body__cell" id="54"></td><td class="board__field__body__cell" id="55"></td><td class="board__field__body__cell" id="56"></td>
+              			<td class="board__field__body__cell" id="57"></td><td class="board__field__body__cell" id="58"></td><td class="board__field__body__cell" id="59"></td><td class="board__field__body__cell" id="60"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="D">D</td>
+              			<td class="board__field__body__cell" id="61"></td><td class="board__field__body__cell" id="62"></td><td class="board__field__body__cell" id="63"></td><td class="board__field__body__cell" id="64"></td>
+              			<td class="board__field__body__cell" id="65"></td><td class="board__field__body__cell" id="66"></td><td class="board__field__body__cell" id="67"></td><td class="board__field__body__cell" id="68"></td>
+              			<td class="board__field__body__cell" id="69"></td><td class="board__field__body__cell" id="70"></td><td class="board__field__body__cell" id="71"></td><td class="board__field__body__cell" id="72"></td>
+              			<td class="board__field__body__cell" id="73"></td><td class="board__field__body__cell" id="74"></td><td class="board__field__body__cell" id="75"></td><td class="board__field__body__cell" id="76"></td>
+              			<td class="board__field__body__cell" id="77"></td><td class="board__field__body__cell" id="78"></td><td class="board__field__body__cell" id="79"></td><td class="board__field__body__cell" id="80"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="E">E</td>
+              			<td class="board__field__body__cell" id="81"></td><td class="board__field__body__cell" id="82"></td><td class="board__field__body__cell" id="83"></td><td class="board__field__body__cell" id="84"></td>
+              			<td class="board__field__body__cell" id="85"></td><td class="board__field__body__cell" id="86"></td><td class="board__field__body__cell" id="87"></td><td class="board__field__body__cell" id="88"></td>
+              			<td class="board__field__body__cell" id="89"></td><td class="board__field__body__cell" id="90"></td><td class="board__field__body__cell" id="91"></td><td class="board__field__body__cell" id="92"></td>
+              			<td class="board__field__body__cell" id="93"></td><td class="board__field__body__cell" id="94"></td><td class="board__field__body__cell" id="95"></td><td class="board__field__body__cell" id="96"></td>
+              			<td class="board__field__body__cell" id="97"></td><td class="board__field__body__cell" id="98"></td><td class="board__field__body__cell" id="99"></td><td class="board__field__body__cell" id="100"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="F">F</td>
+              			<td class="board__field__body__cell" id="101"></td><td class="board__field__body__cell" id="102"></td><td class="board__field__body__cell" id="103"></td><td class="board__field__body__cell" id="104"></td>
+              			<td class="board__field__body__cell" id="105"></td><td class="board__field__body__cell" id="106"></td><td class="board__field__body__cell" id="107"></td><td class="board__field__body__cell" id="108"></td>
+              			<td class="board__field__body__cell" id="109"></td><td class="board__field__body__cell" id="110"></td><td class="board__field__body__cell" id="111"></td><td class="board__field__body__cell" id="112"></td>
+              			<td class="board__field__body__cell" id="113"></td><td class="board__field__body__cell" id="114"></td><td class="board__field__body__cell" id="115"></td><td class="board__field__body__cell" id="116"></td>
+              			<td class="board__field__body__cell" id="117"></td><td class="board__field__body__cell" id="118"></td><td class="board__field__body__cell" id="119"></td><td class="board__field__body__cell" id="120"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="G">G</td>
+              			<td class="board__field__body__cell" id="121"></td><td class="board__field__body__cell" id="122"></td><td class="board__field__body__cell" id="123"></td><td class="board__field__body__cell" id="124"></td>
+              			<td class="board__field__body__cell" id="125"></td><td class="board__field__body__cell" id="126"></td><td class="board__field__body__cell" id="127"></td><td class="board__field__body__cell" id="128"></td>
+              			<td class="board__field__body__cell" id="129"></td><td class="board__field__body__cell" id="130"></td><td class="board__field__body__cell" id="131"></td><td class="board__field__body__cell" id="132"></td>
+              			<td class="board__field__body__cell" id="133"></td><td class="board__field__body__cell" id="134"></td><td class="board__field__body__cell" id="135"></td><td class="board__field__body__cell" id="136"></td>
+              			<td class="board__field__body__cell" id="137"></td><td class="board__field__body__cell" id="138"></td><td class="board__field__body__cell" id="139"></td><td class="board__field__body__cell" id="140"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="H">H</td>
+              			<td class="board__field__body__cell" id="141"></td><td class="board__field__body__cell" id="142"></td><td class="board__field__body__cell" id="143"></td><td class="board__field__body__cell" id="144"></td>
+              			<td class="board__field__body__cell" id="145"></td><td class="board__field__body__cell" id="146"></td><td class="board__field__body__cell" id="147"></td><td class="board__field__body__cell" id="148"></td>
+              			<td class="board__field__body__cell" id="149"></td><td class="board__field__body__cell" id="150"></td><td class="board__field__body__cell" id="151"></td><td class="board__field__body__cell" id="152"></td>
+              			<td class="board__field__body__cell" id="153"></td><td class="board__field__body__cell" id="154"></td><td class="board__field__body__cell" id="155"></td><td class="board__field__body__cell" id="156"></td>
+              			<td class="board__field__body__cell" id="157"></td><td class="board__field__body__cell" id="158"></td><td class="board__field__body__cell" id="159"></td><td class="board__field__body__cell" id="160"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="I">I</td>
+              			<td class="board__field__body__cell" id="161"></td><td class="board__field__body__cell" id="162"></td><td class="board__field__body__cell" id="163"></td><td class="board__field__body__cell" id="164"></td>
+              			<td class="board__field__body__cell" id="165"></td><td class="board__field__body__cell" id="166"></td><td class="board__field__body__cell" id="167"></td><td class="board__field__body__cell" id="168"></td>
+              			<td class="board__field__body__cell" id="169"></td><td class="board__field__body__cell" id="170"></td><td class="board__field__body__cell" id="171"></td><td class="board__field__body__cell" id="172"></td>
+              			<td class="board__field__body__cell" id="173"></td><td class="board__field__body__cell" id="174"></td><td class="board__field__body__cell" id="175"></td><td class="board__field__body__cell" id="176"></td>
+              			<td class="board__field__body__cell" id="177"></td><td class="board__field__body__cell" id="178"></td><td class="board__field__body__cell" id="179"></td><td class="board__field__body__cell" id="180"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="J">J</td>
+              			<td class="board__field__body__cell" id="181"></td><td class="board__field__body__cell" id="182"></td><td class="board__field__body__cell" id="183"></td><td class="board__field__body__cell" id="184"></td>
+              			<td class="board__field__body__cell" id="185"></td><td class="board__field__body__cell" id="186"></td><td class="board__field__body__cell" id="187"></td><td class="board__field__body__cell" id="188"></td>
+              			<td class="board__field__body__cell" id="189"></td><td class="board__field__body__cell" id="190"></td><td class="board__field__body__cell" id="191"></td><td class="board__field__body__cell" id="192"></td>
+              			<td class="board__field__body__cell" id="193"></td><td class="board__field__body__cell" id="194"></td><td class="board__field__body__cell" id="195"></td><td class="board__field__body__cell" id="196"></td>
+              			<td class="board__field__body__cell" id="197"></td><td class="board__field__body__cell" id="198"></td><td class="board__field__body__cell" id="199"></td><td class="board__field__body__cell" id="200"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="K">K</td>
+              			<td class="board__field__body__cell" id="201"></td><td class="board__field__body__cell" id="202"></td><td class="board__field__body__cell" id="203"></td><td class="board__field__body__cell" id="204"></td>
+              			<td class="board__field__body__cell" id="205"></td><td class="board__field__body__cell" id="206"></td><td class="board__field__body__cell" id="207"></td><td class="board__field__body__cell" id="208"></td>
+              			<td class="board__field__body__cell" id="209"></td><td class="board__field__body__cell" id="210"></td><td class="board__field__body__cell" id="211"></td><td class="board__field__body__cell" id="212"></td>
+              			<td class="board__field__body__cell" id="213"></td><td class="board__field__body__cell" id="214"></td><td class="board__field__body__cell" id="215"></td><td class="board__field__body__cell" id="216"></td>
+              			<td class="board__field__body__cell" id="217"></td><td class="board__field__body__cell" id="218"></td><td class="board__field__body__cell" id="219"></td><td class="board__field__body__cell" id="220"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="L">L</td>
+              			<td class="board__field__body__cell" id="221"></td><td class="board__field__body__cell" id="222"></td><td class="board__field__body__cell" id="223"></td><td class="board__field__body__cell" id="224"></td>
+              			<td class="board__field__body__cell" id="225"></td><td class="board__field__body__cell" id="226"></td><td class="board__field__body__cell" id="227"></td><td class="board__field__body__cell" id="228"></td>
+              			<td class="board__field__body__cell" id="229"></td><td class="board__field__body__cell" id="230"></td><td class="board__field__body__cell" id="231"></td><td class="board__field__body__cell" id="232"></td>
+              			<td class="board__field__body__cell" id="233"></td><td class="board__field__body__cell" id="234"></td><td class="board__field__body__cell" id="235"></td><td class="board__field__body__cell" id="236"></td>
+              			<td class="board__field__body__cell" id="237"></td><td class="board__field__body__cell" id="238"></td><td class="board__field__body__cell" id="239"></td><td class="board__field__body__cell" id="240"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="M">M</td>
+              			<td class="board__field__body__cell" id="241"></td><td class="board__field__body__cell" id="242"></td><td class="board__field__body__cell" id="243"></td><td class="board__field__body__cell" id="244"></td>
+              			<td class="board__field__body__cell" id="245"></td><td class="board__field__body__cell" id="246"></td><td class="board__field__body__cell" id="247"></td><td class="board__field__body__cell" id="248"></td>
+              			<td class="board__field__body__cell" id="249"></td><td class="board__field__body__cell" id="250"></td><td class="board__field__body__cell" id="251"></td><td class="board__field__body__cell" id="252"></td>
+              			<td class="board__field__body__cell" id="253"></td><td class="board__field__body__cell" id="254"></td><td class="board__field__body__cell" id="255"></td><td class="board__field__body__cell" id="256"></td>
+              			<td class="board__field__body__cell" id="257"></td><td class="board__field__body__cell" id="258"></td><td class="board__field__body__cell" id="259"></td><td class="board__field__body__cell" id="260"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="N">N</td>
+              			<td class="board__field__body__cell" id="261"></td><td class="board__field__body__cell" id="262"></td><td class="board__field__body__cell" id="263"></td><td class="board__field__body__cell" id="264"></td>
+              			<td class="board__field__body__cell" id="265"></td><td class="board__field__body__cell" id="266"></td><td class="board__field__body__cell" id="267"></td><td class="board__field__body__cell" id="268"></td>
+              			<td class="board__field__body__cell" id="269"></td><td class="board__field__body__cell" id="270"></td><td class="board__field__body__cell" id="271"></td><td class="board__field__body__cell" id="272"></td>
+              			<td class="board__field__body__cell" id="273"></td><td class="board__field__body__cell" id="274"></td><td class="board__field__body__cell" id="275"></td><td class="board__field__body__cell" id="276"></td>
+              			<td class="board__field__body__cell" id="277"></td><td class="board__field__body__cell" id="278"></td><td class="board__field__body__cell" id="279"></td><td class="board__field__body__cell" id="280"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="O">O</td>
+              			<td class="board__field__body__cell" id="281"></td><td class="board__field__body__cell" id="282"></td><td class="board__field__body__cell" id="283"></td><td class="board__field__body__cell" id="284"></td>
+              			<td class="board__field__body__cell" id="285"></td><td class="board__field__body__cell" id="286"></td><td class="board__field__body__cell" id="287"></td><td class="board__field__body__cell" id="288"></td>
+              			<td class="board__field__body__cell" id="289"></td><td class="board__field__body__cell" id="290"></td><td class="board__field__body__cell" id="291"></td><td class="board__field__body__cell" id="292"></td>
+              			<td class="board__field__body__cell" id="293"></td><td class="board__field__body__cell" id="294"></td><td class="board__field__body__cell" id="295"></td><td class="board__field__body__cell" id="296"></td>
+              			<td class="board__field__body__cell" id="297"></td><td class="board__field__body__cell" id="298"></td><td class="board__field__body__cell" id="299"></td><td class="board__field__body__cell" id="300"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="P">P</td>
+              			<td class="board__field__body__cell" id="301"></td><td class="board__field__body__cell" id="302"></td><td class="board__field__body__cell" id="303"></td><td class="board__field__body__cell" id="304"></td>
+              			<td class="board__field__body__cell" id="305"></td><td class="board__field__body__cell" id="306"></td><td class="board__field__body__cell" id="307"></td><td class="board__field__body__cell" id="308"></td>
+              			<td class="board__field__body__cell" id="309"></td><td class="board__field__body__cell" id="310"></td><td class="board__field__body__cell" id="311"></td><td class="board__field__body__cell" id="312"></td>
+              			<td class="board__field__body__cell" id="313"></td><td class="board__field__body__cell" id="314"></td><td class="board__field__body__cell" id="315"></td><td class="board__field__body__cell" id="316"></td>
+              			<td class="board__field__body__cell" id="317"></td><td class="board__field__body__cell" id="318"></td><td class="board__field__body__cell" id="319"></td><td class="board__field__body__cell" id="320"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="Q">Q</td>
+              			<td class="board__field__body__cell" id="321"></td><td class="board__field__body__cell" id="322"></td><td class="board__field__body__cell" id="323"></td><td class="board__field__body__cell" id="324"></td>
+              			<td class="board__field__body__cell" id="325"></td><td class="board__field__body__cell" id="326"></td><td class="board__field__body__cell" id="327"></td><td class="board__field__body__cell" id="328"></td>
+              			<td class="board__field__body__cell" id="329"></td><td class="board__field__body__cell" id="330"></td><td class="board__field__body__cell" id="331"></td><td class="board__field__body__cell" id="332"></td>
+              			<td class="board__field__body__cell" id="333"></td><td class="board__field__body__cell" id="334"></td><td class="board__field__body__cell" id="335"></td><td class="board__field__body__cell" id="336"></td>
+              			<td class="board__field__body__cell" id="337"></td><td class="board__field__body__cell" id="338"></td><td class="board__field__body__cell" id="339"></td><td class="board__field__body__cell" id="340"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="R">R</td>
+              			<td class="board__field__body__cell" id="341"></td><td class="board__field__body__cell" id="342"></td><td class="board__field__body__cell" id="343"></td><td class="board__field__body__cell" id="344"></td>
+              			<td class="board__field__body__cell" id="345"></td><td class="board__field__body__cell" id="346"></td><td class="board__field__body__cell" id="347"></td><td class="board__field__body__cell" id="348"></td>
+              			<td class="board__field__body__cell" id="349"></td><td class="board__field__body__cell" id="350"></td><td class="board__field__body__cell" id="351"></td><td class="board__field__body__cell" id="352"></td>
+              			<td class="board__field__body__cell" id="353"></td><td class="board__field__body__cell" id="354"></td><td class="board__field__body__cell" id="355"></td><td class="board__field__body__cell" id="356"></td>
+              			<td class="board__field__body__cell" id="357"></td><td class="board__field__body__cell" id="358"></td><td class="board__field__body__cell" id="359"></td><td class="board__field__body__cell" id="360"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="S">S</td>
+              			<td class="board__field__body__cell" id="361"></td><td class="board__field__body__cell" id="362"></td><td class="board__field__body__cell" id="363"></td><td class="board__field__body__cell" id="364"></td>
+              			<td class="board__field__body__cell" id="365"></td><td class="board__field__body__cell" id="366"></td><td class="board__field__body__cell" id="367"></td><td class="board__field__body__cell" id="368"></td>
+              			<td class="board__field__body__cell" id="369"></td><td class="board__field__body__cell" id="370"></td><td class="board__field__body__cell" id="371"></td><td class="board__field__body__cell" id="372"></td>
+              			<td class="board__field__body__cell" id="373"></td><td class="board__field__body__cell" id="374"></td><td class="board__field__body__cell" id="375"></td><td class="board__field__body__cell" id="376"></td>
+              			<td class="board__field__body__cell" id="377"></td><td class="board__field__body__cell" id="378"></td><td class="board__field__body__cell" id="379"></td><td class="board__field__body__cell" id="380"></td>
+              		</tr>
+              		<tr class="board__field__body__row">
+              			<td class="board__field__handler" id="T">T</td>
+              			<td class="board__field__body__cell" id="381"></td><td class="board__field__body__cell" id="382"></td><td class="board__field__body__cell" id="383"></td><td class="board__field__body__cell" id="384"></td>
+              			<td class="board__field__body__cell" id="385"></td><td class="board__field__body__cell" id="386"></td><td class="board__field__body__cell" id="387"></td><td class="board__field__body__cell" id="388"></td>
+              			<td class="board__field__body__cell" id="389"></td><td class="board__field__body__cell" id="390"></td><td class="board__field__body__cell" id="391"></td><td class="board__field__body__cell" id="392"></td>
+              			<td class="board__field__body__cell" id="393"></td><td class="board__field__body__cell" id="394"></td><td class="board__field__body__cell" id="395"></td><td class="board__field__body__cell" id="396"></td>
+              			<td class="board__field__body__cell" id="397"></td><td class="board__field__body__cell" id="398"></td><td class="board__field__body__cell" id="399"></td><td class="board__field__body__cell" id="400"></td>
+              		</tr>
+            		</tbody>
+            	</table>
+              <div class="board__fireBlock">
+                <form action="/" method="POST" name="board-shot" id="board-shot">
+                  <input type="text" class="board__fireBlock__getCoords" name="board-coords" id="board-coords" form="board-shot" pattern="[A-Ta-t][0-20]{1,2}" placeholder="Enter coords: A1" value="" required>
+                  <button class="button board__button" id="fire-button" type="submit" form="board-shot">Fire</button>
+                </form>
+              </div>
+              <div class="board__info board__info-left">
+                <h4 class="board__info-left__score">Total score:</h4>
+                <span class="board__info-left__score-sum">0</span>
+                <h5 class="board__info-left__sunk">Ships sunk:</h5>
+                <p class="board__info-left__sunk-item">
+                  <span class="board__info-left__sunk-item-name"></span>
+                  <span class="board__info-left__sunk-item-quantity"></span>
+                </p>
+                <p class="board__info-left__sunk-total">
+                  <span class="board__info--left__sunk-total-name">Total:</span>
+                  <span class="board__info--left__sunk-total-quantity"></span>
+                </p>
+                <h5 class="board__info-left__damaged">Ships damaged</h5>
+                <p class="board__info-left__damaged-item">
+                  <span class="board__info-left__damaged-item-name"></span>
+                  <span class="board__info-left__damaged-item-quantity"></span>
+                </p>
+                <p class="board__info-left__damaged-total">
+                  <span class="board__info-left__damaged-total-name">Total:</span>
+                  <span class="board__info-left__damaged-total-quantity"></span>
+                </p>
+              </div>
+              <div class="board__info board__info-right">
+                <h4 class="board__info-right-moves">Total moves:</h4>
+                <span class="board__info-right__moves-sum"></span>
+                <h5 class="board__info-right__left">Ships left:</h5>
+                <p class="board__info-right__left-item">
+                  <span class="board__info-right__left-item-name"></span>
+                  <span class="board__info-right__left-item-quantity"></span>
+                </p>
+                <p class="board__info-right__left-total">
+                  <span class="board__info-right__left-total-name">Total:</span>
+                  <span class="board__info-right__left-total-quantity"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrap">
+          <div class="footer__item footer__item-left">
+            <div class="footer__img"><a href="https://www.facebook.com/talamdl"><img src="img/logo-2.png" alt="logo"></a></div>
+            <div class="footer__desc">
+              <div class="footer__desc__row">
+                <a href="mailto:vitya008@yandex.ru" class="footer__desc__item footer__desc__email">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-square" class="svg-inline--fa fa-envelope-square fa-w-14 footer__desc__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="orange" d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM178.117 262.104C87.429 196.287 88.353 196.121 64 177.167V152c0-13.255 10.745-24 24-24h272c13.255 0 24 10.745 24 24v25.167c-24.371 18.969-23.434 19.124-114.117 84.938-10.5 7.655-31.392 26.12-45.883 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041 64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></path></svg>
+                  <span>Message</span></a>
+              </div>
+              <div class="footer__desc__row">
+                <a target="_blank" href="https://www.facebook.com/talamdl" class="footer__desc__item footer__desc__facebook">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14 footer__desc__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="purple" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg>
+                  <span>Facebook</span></a>
+              </div>
+              <div class="footer__desc__row">
+                <a href="skype:v1uglu2skr3?chat" class="footer__desc__item footer__desc__skype">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="skype" class="svg-inline--fa fa-skype fa-w-14 footer__desc__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#0cf" d="M424.7 299.8c2.9-14 4.7-28.9 4.7-43.8 0-113.5-91.9-205.3-205.3-205.3-14.9 0-29.7 1.7-43.8 4.7C161.3 40.7 137.7 32 112 32 50.2 32 0 82.2 0 144c0 25.7 8.7 49.3 23.3 68.2-2.9 14-4.7 28.9-4.7 43.8 0 113.5 91.9 205.3 205.3 205.3 14.9 0 29.7-1.7 43.8-4.7 19 14.6 42.6 23.3 68.2 23.3 61.8 0 112-50.2 112-112 .1-25.6-8.6-49.2-23.2-68.1zm-194.6 91.5c-65.6 0-120.5-29.2-120.5-65 0-16 9-30.6 29.5-30.6 31.2 0 34.1 44.9 88.1 44.9 25.7 0 42.3-11.4 42.3-26.3 0-18.7-16-21.6-42-28-62.5-15.4-117.8-22-117.8-87.2 0-59.2 58.6-81.1 109.1-81.1 55.1 0 110.8 21.9 110.8 55.4 0 16.9-11.4 31.8-30.3 31.8-28.3 0-29.2-33.5-75-33.5-25.7 0-42 7-42 22.5 0 19.8 20.8 21.8 69.1 33 41.4 9.3 90.7 26.8 90.7 77.6 0 59.1-57.1 86.5-112 86.5z"></path></svg>
+                  <span>Skype</span></a>
+              </div>
+              <div class="footer__desc__row">
+                <a target="_blank" href="https://t.me/v_uglu_skr" class="footer__desc__item footer__desc__telegram">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram" class="svg-inline--fa fa-telegram fa-w-16 footer__desc__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="red" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>
+                  <span>Telegram</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__item footer__item-center">
+            <p>Multimedia Company&trade;, 2019<sup>&reg;</sup>. <sup>&copy;</sup>All rights reserved.</p>
+          </div>
+          <div class="footer__item footer__item-right">
+            <div class="footer__links">
+              <a target="_blank" href="https://github.com/zangiff/seabattle" class="footer__links__item">
+                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16 footer__links__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="green" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+                <span>Project github</span></a>
+              <a href="mailto:vitya0008@gmail.com" class="footer__links__item">
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="comments" class="svg-inline--fa fa-comments fa-w-18 footer__links__img" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="#0cf" d="M532 386.2c27.5-27.1 44-61.1 44-98.2 0-80-76.5-146.1-176.2-157.9C368.3 72.5 294.3 32 208 32 93.1 32 0 103.6 0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5 0 96.7-20.2 125.2-38.8 9.2 2.1 18.7 3.7 28.4 4.9C208.1 407.6 281.8 448 368 448c20.8 0 40.8-2.4 59.8-6.8C456.3 459.7 499.4 480 553 480c9.2 0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25-.4-.3-22.5-24.1-37.8-54.8zm-392.8-92.3L122.1 305c-14.1 9.1-28.5 16.3-43.1 21.4 2.7-4.7 5.4-9.7 8-14.8l15.5-31.1L77.7 256C64.2 242.6 48 220.7 48 192c0-60.7 73.3-112 160-112s160 51.3 160 112-73.3 112-160 112c-16.5 0-33-1.9-49-5.6l-19.8-4.5zM498.3 352l-24.7 24.4 15.5 31.1c2.6 5.1 5.3 10.1 8 14.8-14.6-5.1-29-12.3-43.1-21.4l-17.1-11.1-19.9 4.6c-16 3.7-32.5 5.6-49 5.6-54 0-102.2-20.1-131.3-49.7C338 339.5 416 272.9 416 192c0-3.4-.4-6.7-.7-10C479.7 196.5 528 238.8 528 288c0 28.7-16.2 50.6-29.7 64z"></path></svg>
+                <span>Send feedback</span></a>
+            </div>
+            <div class="footer__img"><a href="https://vk.com/vitya008"><img src="img/logo-1.png" alt="logo"></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+	</div>
+<script src="./js/main.js"></script>
+</body>
+</html>

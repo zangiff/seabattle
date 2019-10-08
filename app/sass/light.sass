@@ -1,0 +1,333 @@
+@import "fonts"
+@import "mixins"
+@import "presets"
+
+.header
+  text-align: center
+  background: #bbb
+  border-bottom: 2px outset red
+  @media only screen and(max-width: 500px)
+    width: 500px
+  &__title
+    position: relative
+    padding-top: 50px
+    border-bottom: 2px outset red
+    @media only screen and(max-width: 547px)
+      padding-top: 20px
+    &__controls
+      position: absolute
+      top: 90px
+      right: 0
+      width: 120px
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-column-gap: 20px
+      @media only screen and(max-width: 680px)
+        top: 102px
+        grid-column-gap: 10px
+        width: 70px
+      @media only screen and(max-width: 547px)
+        top: 43px
+        grid-column-gap: 5px
+        width: 45px
+      span
+        display: block
+        margin: 0 auto
+      &-dark
+        padding-top: 10px
+        width: 50px
+        height: 50px
+        border: 1px solid black
+        border-radius: 5px
+        cursor: pointer
+        @media only screen and(max-width: 680px)
+          width: 30px
+          height: 30px
+          padding-top: 5px
+        @media only screen and(max-width: 547px)
+          border: 1px solid transparent
+          height: 20px
+          width: 20px
+          padding-top: 0
+        &__img
+          height: 30px
+          width: 30px
+          @media only screen and(max-width: 680px)
+            height: 16px
+            width: 16px
+          @media only screen and(max-width: 547px)
+            height: 14px
+            width: 14px
+      &-light
+        padding-top: 10px
+        width: 50px
+        height: 50px
+        border: 1px solid white
+        border-radius: 5px
+        cursor: pointer
+        @media only screen and(max-width: 680px)
+          width: 30px
+          height: 30px
+          padding-top: 5px
+        @media only screen and(max-width: 547px)
+          border: 1px solid transparent
+          height: 20px
+          width: 20px
+          padding-top: 0
+        &__img
+          height: 30px
+          width: 30px
+          @media only screen and(max-width: 680px)
+            height: 16px
+            width: 16px
+          @media only screen and(max-width: 547px)
+            height: 14px
+            width: 14px
+    h1
+      font-weight: 700
+      font-size: 50px
+      text-transform: uppercase
+      margin-bottom: 0
+      color: #0ff
+      @media only screen and(max-width: 547px)
+        font-size: 25px
+    span
+      font-weight: 300
+      color: yellow
+      @media only screen and(max-width: 547px)
+        font-size: 10px
+      &:last-child
+        display: block
+        text-align: right
+        padding: 0 5%
+        color: black
+        @media only screen and(max-width: 573px)
+          font-size: 12px
+    p
+      margin-top: 30px
+      font-weight: 400
+      font-size: 18px
+      padding: 0 5% 0 20%
+      text-align: right
+      color: white
+      @media only screen and(max-width: 680px)
+        padding: 0 3%
+      @media only screen and(max-width: 573px)
+        font-size: 14px
+        padding: 0
+  &__button
+    margin: 30px 5%
+    width: 200px
+    height: 50px
+    line-height: 50px
+    border-radius: 5px
+    color: white
+    @media only screen and(max-width: 932px)
+      margin: 20px 2%
+      width: 150px
+      height: 35px
+      line-height: 35px
+      font-size: 12px
+    @media only screen and(max-width: 586px)
+      display: block
+      margin: 10px auto
+    &-show
+      background: red
+    &-ask
+      background: orange
+    &-restart
+      background: green
+
+.board
+  &__wrap
+    padding: 80px 0
+  &__battle
+    display: grid
+    grid-template-rows: 445px 90px
+    grid-template-columns: 1fr 585px 1fr
+    grid-column-gap: 50px
+    grid-template-areas: "left field right" "left field fire"
+    @media only screen and(max-width: 1189px)
+      grid-column-gap: 20px
+    @media only screen and(max-width: 1130px)
+      grid-template-rows: 375px 90px
+      grid-template-columns: 1fr 480px 1fr
+    @media only screen and(max-width: 1030px)
+      grid-template-rows: 330px 90px
+      grid-template-columns: 1fr 375px 1fr
+    @media only screen and(max-width: 928px)
+      display: block
+  &__field
+    font-size: 16px
+    color: black
+    border-collapse: collapse
+    text-align: center
+    grid-area: field
+    @media only screen and(max-width: 1130px)
+      font-size: 14px
+    @media only screen and(max-width: 1030px)
+      font-size: 12px
+      height: 400px
+      width: 400px
+    @media only screen and(max-width: 928px)
+      margin: 0 auto
+    &__body
+      &__cell
+        background: #d8e0de
+        background: linear-gradient(135deg,  #d8e0de 0%, #aebfbc 22%, #99afab 33%, #8ea6a2 50%, #829d98 67%, #aebfbc 83%, #99afab 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#99afab',GradientType=1)
+    th, td
+      width: 25px
+      height: 25px
+      border: 1px solid #0cf
+      @media only screen and(max-width: 1130px)
+        width: 20px
+        height: 20px
+      @media only screen and(max-width: 1030px)
+        width: 15px
+        height: 15px
+    th
+      font-weight: 400
+      border-top-color: transparent
+      &:first-child
+        border-left-color: transparent
+    td
+      font-weight: 400
+      &:first-child
+        border-left-color: transparent
+  &__fireBlock
+    background-color: rgb(85,125,20)
+    width: 280px
+    height: 90px
+    padding: 15px 20px 0
+    border-radius: 30px 0 30px 0
+    margin: 0 15px
+    grid-area: fire
+    @media only screen and(max-width: 928px)
+      margin: 30px auto
+    input
+      width: 130px
+      height: 30px
+      font-size: 20px
+      text-transform: uppercase
+      border-radius: 5px 0 5px 0
+      border: none
+      outline: none
+      margin: 15px 0
+      text-align: center
+      &::placeholder
+        font-size: 16px
+        text-transform: none
+        padding: 0 5px
+        color: #666
+    button
+      height: 60px
+      width: 60px
+      margin-left: 30px
+      color: white
+      background: red
+      border-radius: 15px 0 15px 0
+  &__info
+    padding: 0 15px
+    color: green
+    h4, h5
+      margin-bottom: 5px
+      text-transform: uppercase
+    h4
+      color: red
+    h5
+      color: orange
+    p
+      margin: 5px 0
+    &-left
+      grid-area: left
+      @media only screen and(max-width: 928px)
+        width: 360px
+        margin: 0 auto
+    &-right
+      grid-area: right
+      @media only screen and(max-width: 928px)
+        width: 360px
+        margin: 0 auto
+
+.footer
+  border-top: 2px groove red
+  background: #bbb
+  @media only screen and(max-width: 500px)
+    width: 500px
+  &__wrap
+    padding: 30px 0 0
+    display: flex
+    @media only screen and(max-width: 525px)
+      padding: 15px 0 0
+  &__item
+    &-left
+      display: grid
+      grid-template-columns: 1fr 2fr
+      @media only screen and(max-width: 646px)
+        font-size: 10px
+    &-right
+      display: grid
+      grid-template-columns: 2fr 1fr
+      @media only screen and(max-width: 1065px)
+        margin-left: auto
+    &-center
+      flex-grow: 3
+      text-align: center
+      display: flex
+      align-items: flex-end
+      @media only screen and(max-width: 1065px)
+        display: none
+      p
+        padding-top: 5px
+        border-top: 1px solid white
+        padding-bottom: 5px
+        border-bottom: 1px solid white
+  &__desc
+    &__row
+      padding-bottom: 5px
+    &__item
+      display: block
+      position: relative
+      &:hover
+        color: green
+      span
+        display: inline-block
+        position: absolute
+        top: 0
+    &__img
+      height: 18px
+      width: 18px
+      margin: 0 10px 0 30px
+      @media only screen and(max-width: 646px)
+        height: 14px
+        width: 14px
+      @media only screen and(max-width: 525px)
+        height: 12px
+        width: 12px
+  &__links
+    padding-top: 20px
+    a
+      display: block
+      position: relative
+      font-size: 16px
+      text-transform: uppercase
+      font-weight: 600
+      margin-bottom: 5px
+      &:hover
+        color: red
+      @media only screen and(max-width: 646px)
+        font-size: 12px
+        text-transform: none
+    span
+      display: inline-block
+      position: absolute
+      top: 0
+    &__img
+      width: 25px
+      height: 25px
+      margin-right: 10%
+      @media only screen and(max-width: 646px)
+        width: 18px
+        height: 18px
+        margin-right: 5%

@@ -38,8 +38,9 @@
 		</header>
     <main id="main">
       <section class="board">
-        <div class="container">
+        <div class="container board__container">
           <div class="board__wrap">
+            <div class="board__messageArea" id="messageArea">...Just make a shot to start</div>
             <div class="board__battle">
               <table class="board__field">
             		<thead class="board__field__header">
@@ -240,8 +241,8 @@
             		</tbody>
             	</table>
               <div class="board__fireBlock">
-                <form action="/" method="POST" name="board-shot" id="board-shot">
-                  <input type="text" class="board__fireBlock__getCoords" name="board-coords" id="board-coords" form="board-shot" pattern="[A-Ta-t][0-20]{1,2}" placeholder="Enter coords: A1" value="" required>
+                <form action="/" name="board-shot" id="board-shot">
+                  <input type="text" class="board__fireBlock__getCoords" name="board-coords" id="board-coords" form="board-shot" pattern="[A-Ta-t]{1}[0-2]{0,1}[0-9]{1}" placeholder="Enter coords: A1" maxlength="3" required>
                   <button class="button board__button" id="fire-button" type="submit" form="board-shot">Fire</button>
                 </form>
               </div>
@@ -251,34 +252,34 @@
                 <h5 class="board__info-left__sunk">Ships sunk:</h5>
                 <p class="board__info-left__sunk-item">
                   <span class="board__info-left__sunk-item-name"></span>
-                  <span class="board__info-left__sunk-item-quantity"></span>
+                  <span class="board__info-left__sunk-item-quantity">0</span>
                 </p>
-                <p class="board__info-left__sunk-total">
-                  <span class="board__info--left__sunk-total-name">Total:</span>
-                  <span class="board__info--left__sunk-total-quantity"></span>
-                </p>
-                <h5 class="board__info-left__damaged">Ships damaged</h5>
+                <!-- <p class="board__info-left__sunk-total">
+                  <span class="board__info-left__sunk-total-name">Total:</span>
+                  <span class="board__info-left__sunk-total-quantity"></span>
+                </p> -->
+                <h5 class="board__info-left__damaged">Ship damages:</h5>
                 <p class="board__info-left__damaged-item">
                   <span class="board__info-left__damaged-item-name"></span>
-                  <span class="board__info-left__damaged-item-quantity"></span>
+                  <span class="board__info-left__damaged-item-quantity">0</span>
                 </p>
-                <p class="board__info-left__damaged-total">
+                <!-- <p class="board__info-left__damaged-total">
                   <span class="board__info-left__damaged-total-name">Total:</span>
                   <span class="board__info-left__damaged-total-quantity"></span>
-                </p>
+                </p> -->
               </div>
               <div class="board__info board__info-right">
                 <h4 class="board__info-right-moves">Total moves:</h4>
-                <span class="board__info-right__moves-sum"></span>
+                <span class="board__info-right__moves-sum">0</span>
                 <h5 class="board__info-right__left">Ships left:</h5>
                 <p class="board__info-right__left-item">
-                  <span class="board__info-right__left-item-name"></span>
-                  <span class="board__info-right__left-item-quantity"></span>
+                  <!-- <span class="board__info-right__left-item-name"></span> -->
+                  <span class="board__info-right__left-item-quantity">16</span>
                 </p>
-                <p class="board__info-right__left-total">
+                <!-- <p class="board__info-right__left-total">
                   <span class="board__info-right__left-total-name">Total:</span>
                   <span class="board__info-right__left-total-quantity"></span>
-                </p>
+                </p> -->
               </div>
             </div>
           </div>
